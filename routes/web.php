@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+$middleware = ['auth'];
+Route::group(compact('middleware') + ['prefix' => 'admin'], function () {
+    Route::resource('{page?}', Site\PageController::class);
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
