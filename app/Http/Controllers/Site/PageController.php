@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PageController extends Controller
+class PageController extends SiteController
 {
     /**
      * Display a listing of the resource.
