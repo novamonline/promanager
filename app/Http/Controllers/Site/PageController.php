@@ -15,6 +15,7 @@ class PageController extends SiteController
     public function index()
     {
         //
+        return view('pages/admin');
     }
 
     /**
@@ -47,6 +48,7 @@ class PageController extends SiteController
     public function show($id)
     {
         //
+        return view('pages/viewer');
     }
 
     /**
