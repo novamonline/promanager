@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Site\SiteTree;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,5 +28,11 @@ $admin_group = [
 ];
 Route::group($admin_group, function () {
     Route::any('/', Site\PageController::class);
-    Route::resource('page', Site\PageController::class);
+    Route::resource('pages', Site\PageController::class);
 });
+
+$SiteTrees = SiteTree::all();
+foreach ($SiteTrees as $tree) {
+    dump($tree->url);
+    Route::any($tree->url, $tree->class_name);
+}

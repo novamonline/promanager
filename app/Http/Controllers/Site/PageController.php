@@ -48,7 +48,7 @@ class PageController extends SiteController
     public function show($id)
     {
         //
-        return view('pages/viewer');
+        return view('pages/editor');
     }
 
     /**
