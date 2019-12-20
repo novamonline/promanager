@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Site\SiteTree;
+use App\Http\Controllers\Controller;
 
 class PageController extends SiteController
 {
@@ -15,7 +16,8 @@ class PageController extends SiteController
     public function index()
     {
         //
-        return view('pages/admin');
+        $SiteTree = SiteTree::all();
+        return view('pages/admin', get_defined_vars());
     }
 
     /**

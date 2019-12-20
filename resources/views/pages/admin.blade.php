@@ -2,7 +2,7 @@
 @section('content')
 
 <ul>
-@foreach ($SiteTree as $tree
+@foreach ($SiteTree ?? [] as $tree
    <li>{{ $tree->id }} {{ $tree->uri }} {{ $tree->url }}</li>
 @endforeach
 </ul>

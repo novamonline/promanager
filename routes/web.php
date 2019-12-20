@@ -22,11 +22,11 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-$admin_group = [
+$admin_routes_group = [
     'prefix' => 'admin',
     'middleware' => ['auth'],
 ];
-Route::group($admin_group, function () {
+Route::group($admin_routes_group, function () {
     Route::any('/', Site\PageController::class);
     Route::resource('pages', Site\PageController::class);
 });
